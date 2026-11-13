@@ -1,0 +1,463 @@
+
+/* ==============================
+   GLOBAL
+============================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg: #080b14;
+    --bg-secondary: #0e1422;
+    --card: #111a2b;
+    --primary: #7c5cff;
+    --secondary: #00d4ff;
+    --text: #f1f5ff;
+    --muted: #9ba8bd;
+    --border: rgba(255, 255, 255, 0.09);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+::selection {
+    background: var(--primary);
+    color: white;
+}
+
+/* ==============================
+   NAVIGATION
+============================== */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(8, 11, 20, 0.85);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    max-width: 1200px;
+    height: 76px;
+    margin: auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+.logo span {
+    color: var(--secondary);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+/* ==============================
+   HERO
+============================== */
+
+.hero {
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: auto;
+    padding: 150px 30px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    top: 20%;
+    right: 5%;
+    background: var(--primary);
+    opacity: 0.13;
+    filter: blur(150px);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero-tag {
+    color: var(--secondary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 76px);
+    line-height: 1.12;
+    font-weight: 800;
+    letter-spacing: -3px;
+    max-width: 850px;
+}
+
+.hero h1 span {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-description {
+    color: var(--muted);
+    max-width: 580px;
+    margin-top: 28px;
+    font-size: 16px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 38px;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 13px 24px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(100deg, var(--primary), #5540c9);
+    box-shadow: 0 8px 30px rgba(124, 92, 255, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(124, 92, 255, 0.35);
+}
+
+.btn-secondary {
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.btn-secondary:hover {
+    border-color: var(--secondary);
+    color: var(--secondary);
+}
+
+/* ==============================
+   GENERAL SECTIONS
+============================== */
+
+.section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 110px 30px;
+}
+
+.section h2 {
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+}
+
+.section h2::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 3px;
+    margin-top: 12px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 5px;
+}
+
+.section > p {
+    max-width: 800px;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+/* ==============================
+   SKILLS
+============================== */
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.skills-container span {
+    padding: 12px 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: #dce5f7;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.skills-container span:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+    color: var(--secondary);
+}
+
+/* ==============================
+   PROJECTS
+============================== */
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    padding: 30px;
+    min-height: 210px;
+    background: linear-gradient(145deg, #131d30, #0d1320);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(124, 92, 255, 0.7);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.project-card h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ==============================
+   CONTACT
+============================== */
+
+#contact {
+    text-align: center;
+    background: radial-gradient(
+            ellipse at center,
+            rgba(124, 92, 255, 0.10),
+            transparent 65%
+    );
+}
+
+#contact h2::after {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contact p {
+    margin: 0 auto 25px;
+}
+
+#contact a {
+    display: inline-block;
+    padding: 12px 25px;
+    background: var(--primary);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+#contact a:hover {
+    background: var(--secondary);
+    color: var(--bg);
+}
+
+/* ==============================
+   FOOTER
+============================== */
+
+footer {
+    padding: 25px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        gap: 13px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .hero {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .section {
+        padding: 80px 22px;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .navbar {
+        height: auto;
+        min-height: 76px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-actions a {
+        text-align: center;
+    }
+
+    /* ==============================
+   ANIMATIONS & INTERACTIONS
+============================== */
+
+    .reveal {
+        opacity: 0;
+        transform: translateY(25px);
+        transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+    }
+
+    .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav-links a.active {
+        color: var(--secondary);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+
+        .reveal {
+            opacity: 1;
+            transform: none;
+            transition: none;
+        }
+    }
+    /* ==============================
+   ANIMATIONS & INTERACTIONS
+============================== */
+
+    .reveal {
+        opacity: 0;
+        transform: translateY(25px);
+        transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+    }
+
+    .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav-links a.active {
+        color: var(--secondary);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+
+        .reveal {
+            opacity: 1;
+            transform: none;
+            transition: none;
+        }
+    }
+
+}

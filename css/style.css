@@ -334,41 +334,10 @@ footer {
     font-size: 12px;
 }
 
+
 /* ==============================
    RESPONSIVE
 ============================== */
-
-@media (max-width: 768px) {
-
-    .navbar {
-        padding: 0 20px;
-    }
-
-    .nav-links {
-        gap: 13px;
-    }
-
-    .nav-links a {
-        font-size: 11px;
-    }
-
-    .hero {
-        padding-left: 22px;
-        padding-right: 22px;
-    }
-
-    .hero h1 {
-        letter-spacing: -2px;
-    }
-
-    .section {
-        padding: 80px 22px;
-    }
-
-    .projects-container {
-        grid-template-columns: 1fr;
-    }
-}
 
 @media (max-width: 480px) {
 
@@ -394,70 +363,250 @@ footer {
     .hero-actions a {
         text-align: center;
     }
-
-    /* ==============================
-   ANIMATIONS & INTERACTIONS
-============================== */
-
-    .reveal {
-        opacity: 0;
-        transform: translateY(25px);
-        transition:
-                opacity 0.7s ease,
-                transform 0.7s ease;
-    }
-
-    .reveal.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .nav-links a.active {
-        color: var(--secondary);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        html {
-            scroll-behavior: auto;
-        }
-
-        .reveal {
-            opacity: 1;
-            transform: none;
-            transition: none;
-        }
-    }
-    /* ==============================
-   ANIMATIONS & INTERACTIONS
-============================== */
-
-    .reveal {
-        opacity: 0;
-        transform: translateY(25px);
-        transition:
-                opacity 0.7s ease,
-                transform 0.7s ease;
-    }
-
-    .reveal.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .nav-links a.active {
-        color: var(--secondary);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        html {
-            scroll-behavior: auto;
-        }
-
-        .reveal {
-            opacity: 1;
-            transform: none;
-            transition: none;
-        }
-    }
-
 }
+
+/* ==============================
+   ANIMATIONS & INTERACTIONS
+============================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition:
+            opacity 0.7s ease,
+            transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav-links a.active {
+    color: var(--secondary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* ==============================
+   HERO - TWO COLUMN LAYOUT
+============================== */
+
+.hero {
+    max-width: 1200px;
+    min-height: 100vh;
+    padding: 120px 30px 80px;
+}
+
+.hero-layout {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 5vw, 66px);
+}
+
+.hero-specialties {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 35px;
+}
+
+.hero-specialties span {
+    padding: 7px 12px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* TECHNICAL CARD */
+
+.hero-visual {
+    position: relative;
+    padding: 25px;
+}
+
+.tech-card {
+    position: relative;
+    z-index: 2;
+    background: #0d1422;
+    border: 1px solid rgba(124, 92, 255, 0.3);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+}
+
+.tech-card-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 20px;
+    background: #151e30;
+    border-bottom: 1px solid var(--border);
+}
+
+.window-controls {
+    display: flex;
+    gap: 6px;
+}
+
+.window-controls span {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #ff5f57;
+}
+
+.window-controls span:nth-child(2) {
+    background: #febc2e;
+}
+
+.window-controls span:nth-child(3) {
+    background: #28c840;
+}
+
+.terminal-label {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.tech-card-body {
+    padding: 28px 24px;
+    font-family: monospace;
+    font-size: 12px;
+    line-height: 2.2;
+    color: #dce5f7;
+    overflow-wrap: anywhere;
+}
+
+.code-comment {
+    color: #71809b;
+    margin-bottom: 12px;
+}
+
+.code-indent {
+    padding-left: 20px;
+}
+
+.code-purple {
+    color: #c792ea;
+}
+
+.code-blue {
+    color: #82aaff;
+}
+
+.code-green {
+    color: #c3e88d;
+}
+
+.terminal-status {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 25px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    background: #37d996;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #37d996;
+}
+
+/* FLOATING LABELS */
+
+.floating-badge {
+    position: absolute;
+    z-index: 3;
+    padding: 12px 16px;
+    background: #151e30;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 10px;
+    font-weight: 600;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.floating-badge span {
+    color: var(--secondary);
+    margin-right: 8px;
+}
+
+.badge-top {
+    top: 0;
+    right: -5px;
+}
+
+.badge-bottom {
+    bottom: 0;
+    left: -5px;
+}
+
+/* RESPONSIVE HERO */
+
+@media (max-width: 900px) {
+
+    .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .hero-visual {
+        max-width: 600px;
+        width: 100%;
+        margin: auto;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero-visual {
+        padding: 15px;
+    }
+
+    .tech-card-body {
+        padding: 20px 14px;
+        font-size: 10px;
+    }
+
+    .floating-badge {
+        font-size: 9px;
+        padding: 9px;
+    }
+}
+
+
+
+

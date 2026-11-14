@@ -1102,6 +1102,87 @@ footer {
 }
 
 
+/* ==============================
+   RO WINGED BRAND - NAVBAR
+============================== */
+
+.navbar .brand-lockup {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.brand-emblem {
+    display: block;
+    width: 48px;
+    height: 48px;
+
+    object-fit: contain;
+    flex-shrink: 0;
+
+    filter: drop-shadow(0 0 7px rgba(0, 145, 255, 0.22));
+
+    transition:
+            transform 0.3s ease,
+            filter 0.3s ease;
+}
+
+.brand-lockup:hover .brand-emblem {
+    transform: scale(1.06);
+
+    filter: drop-shadow(
+            0 0 10px rgba(0, 212, 255, 0.45)
+    );
+}
+
+.brand-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.brand-copy strong {
+    color: #e6edf7;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    line-height: 1.2;
+}
+
+.brand-copy small {
+    color: #00d4ff;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 1.7px;
+    line-height: 1.2;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+
+    .navbar .brand-lockup {
+        gap: 9px;
+    }
+
+    .brand-emblem {
+        width: 42px;
+        height: 42px;
+    }
+
+    .brand-copy strong {
+        font-size: 12px;
+    }
+
+    .brand-copy small {
+        font-size: 7px;
+    }
+}
+
+
+
 
 
 
